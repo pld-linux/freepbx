@@ -1,5 +1,5 @@
 Summary:	FreePBX - Asterisk Management Portal (AMP)
-Summary(pl):	FreePBX - Interfejs WWW do Asterisk-a
+Summary(pl):	FreePBX - interfejs WWW do Asteriska
 Name:		freepbx
 Version:	2.0.1
 Release:	0.1
