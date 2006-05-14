@@ -8,37 +8,35 @@ Group:		Applications
 Source0:	http://dl.sourceforge.net/amportal/%{name}-%{version}.tar.gz
 # Source0-md5:	aa100b6928a3e1a61603fb969485381a
 URL:		http://www.coalescentsystems.ca/
-BuildRequires:	rpmbuild(macros) >= 1.228
+BuildRequires:	rpmbuild(macros) >= 1.268
 Requires(post,preun):	/sbin/chkconfig
-#Requires:	Asterisk >= 1.2
-Requires:	php-program
-Requires:	php-pear-DB
-Requires:	php-pcre
-Requires:	libxml2
-Requires:	libtiff
-Requires:	lame
-
-#Requires:	httpd
 #Requires:	Apache2
-#Requires:	mysql-client
+#Requires:	Asterisk >= 1.2
+Requires:	asterisk-perl
+Requires:	audiofile
+Requires:	bison
+Requires:	curl
+#Requires:	httpd
+Requires:	lame
+Requires:	libtiff
+Requires:	libxml2
 #Requires:	mysql
-
-Requires:	php-mysql
-Requires:	php-gettext
-Requires:	php-posix
-Requires:	php-gd
+#Requires:	mysql-client
+Requires:	ncurses
 Requires:	openssl
 Requires:	perl
 Requires:	perl-CPAN
-Requires:	bison
-Requires:	ncurses
-Requires:	audiofile
-Requires:	curl
-Requires:	sox
-Requires:	perl-Net-Telnet
 Requires:	perl-IPC-Signal
+Requires:	perl-Net-Telnet
 Requires:	perl-Proc-WaitStat
-Requires:	asterisk-perl
+Requires:	php-gd
+Requires:	php-gettext
+Requires:	php-mysql
+Requires:	php-pcre
+Requires:	php-pear-DB
+Requires:	php-posix
+Requires:	php-program
+Requires:	sox
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
