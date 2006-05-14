@@ -3,11 +3,14 @@ Summary(pl):	FreePBX - interfejs WWW do Asteriska
 Name:		freepbx
 Version:	2.0.1
 Release:	0.1
-License:	GPL v2
+License:	GPL
 Group:		Applications
 Source0:	http://dl.sourceforge.net/amportal/%{name}-%{version}.tar.gz
 # Source0-md5:	aa100b6928a3e1a61603fb969485381a
 URL:		http://www.coalescentsystems.ca/
+BuildRequires:	rpmbuild(macros) >= 1.228
+Requires(post,preun):	/sbin/chkconfig
+#Requires:	Asterisk >= 1.2
 Requires:	php-program
 Requires:	php-pear-DB
 Requires:	php-pcre
@@ -49,8 +52,7 @@ complete with web-based administrative interface.
 %prep
 %setup -q
 #%patch0 -p1
-# undos the source
-#find '(' -name '*.php' -o -name '*.inc' ')' -print0 | xargs -0 sed -i -e 's,\r$,,'
+find '(' -name '*.php' -o -name '*.inc' ')' -print0 | xargs -0 sed -i -e 's,\r$,,'
 
 %build
 
@@ -59,7 +61,8 @@ rm -rf $RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_datadir}/%{name}/{cgi-bin,agi-bin,astetc,bin,htdocs,htdocs_panel,mohmp3,sbin,sounds}
-install -d $RPM_BUILD_ROOT%{_datadir}/%{name}/htdocs/{_asterisk,admin,recordings}
+install -d $RPM_BUILD_ROOT%{_sysconfdir}/rc.d/init.d
+install -d $RPM_BUILD_ROOT%{_bindir}
 
 cd ./amp_conf
 cp -R htdocs/* $RPM_BUILD_ROOT%{_datadir}/%{name}/htdocs
@@ -69,6 +72,8 @@ install bin/*	$RPM_BUILD_ROOT%{_datadir}/%{name}/bin
 install mohmp3/* $RPM_BUILD_ROOT%{_datadir}/%{name}/mohmp3
 install sounds/* $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds
 
+#install init/op_panel_redhat.sh $RPM_BUILD_ROOT%{_sysconfdir}/rc.d/init.d/%{name}
+#install op_server.pl	$RPM_BUILD_ROOT%{_bindir}
 #TODO
 #htdocs_panel
 #sbin
@@ -77,11 +82,22 @@ install sounds/* $RPM_BUILD_ROOT%{_datadir}/%{name}/sounds
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+/sbin/chkconfig --add %{name}
+%service %{name} restart
+
+%preun
+if [ "$1" = "0" ]; then
+	%service -q %{name} stop
+	/sbin/chkconfig --del %{name}
+fi
 
 %files
 %defattr(644,root,root,755)
 #%doc AUTHORS CREDITS ChangeLog NEWS README THANKS TODO
-#%%dir %{_sysconfdir}
-#%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/*
-#%attr(755,root,root) %{_bindir}/*
-#%{_datadir}/%{name}
+%attr(754,root,root) /etc/rc.d/init.d/%{name}
+#%config(noreplace) %verify(not md5 mtime size) /etc/sysconfig/%{name}
+%dir %{_sysconfdir}
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/*
+%attr(755,root,root) %{_bindir}/*
+%{_datadir}/%{name}
