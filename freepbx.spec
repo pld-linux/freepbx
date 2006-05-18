@@ -10,13 +10,12 @@ Source0:	http://dl.sourceforge.net/amportal/%{name}-%{version}.tar.gz
 URL:		http://www.coalescentsystems.ca/
 BuildRequires:	rpmbuild(macros) >= 1.268
 Requires(post,preun):	/sbin/chkconfig
-#Requires:	Apache2
-#Requires:	Asterisk >= 1.2
+#Requires:	apache >= 2
+#Requires:	asterisk >= 1.2
 Requires:	asterisk-perl
 Requires:	audiofile
 Requires:	bison
 Requires:	curl
-#Requires:	httpd
 Requires:	lame
 Requires:	libtiff
 Requires:	libxml2
@@ -46,13 +45,15 @@ applications to produce a standardized implementation of Asterisk
 complete with web-based administrative interface.
 
 %description -l pl
+Coalescent Systems Inc. uruchomi³o projekt freePBX (poprzednio
+Asterisk Management Portal) aby po³±czyæ najlepsze istniej±ce
+aplikacje w celu stworzenia ustandaryzowanej implementacji
+Asteriska uzupe³nionego o interfejs administracyjny WWW.
 
 %prep
 %setup -q
 #%patch0 -p1
 find '(' -name '*.php' -o -name '*.inc' ')' -print0 | xargs -0 sed -i -e 's,\r$,,'
-
-%build
 
 %install
 rm -rf $RPM_BUILD_ROOT
