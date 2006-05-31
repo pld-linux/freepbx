@@ -1,7 +1,6 @@
-#TODO
+# TODO
 # - remowe jpgraph, add patch
 # - pl translations
-
 Summary:	FreePBX - Asterisk Management Portal (AMP)
 Summary(pl):	FreePBX - interfejs WWW do Asteriska
 Name:		freepbx
@@ -76,17 +75,15 @@ FreePBX.
 %setup -q
 %patch0 -p1
 find '(' -name '*.php' -o -name '*.inc' ')' -print0 | xargs -0 sed -i -e 's,\r$,,'
+rm -dfr htdocs/admin/cdr/jpgraph_lib
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
-install -d $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_datadir}/%{name}/{cgi-bin,agi-bin,astetc,bin,htdocs,htdocs_panel,mohmp3,sbin,sounds}
 install -d $RPM_BUILD_ROOT%{_sysconfdir}/rc.d/init.d
 install -d $RPM_BUILD_ROOT%{_bindir}
 
-cd ./amp_conf
-rm -dfr htdocs/admin/cdr/jpgraph_lib
+cd amp_conf
 cp -R htdocs/* $RPM_BUILD_ROOT%{_datadir}/%{name}/htdocs
 install cgi-bin/* $RPM_BUILD_ROOT%{_datadir}/%{name}/cgi-bin
 install agi-bin/* $RPM_BUILD_ROOT%{_datadir}/%{name}/agi-bin
