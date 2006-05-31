@@ -1,0 +1,60 @@
+diff -uNr freepbx-2.0.1.orig/amp_conf/htdocs/admin/cdr/graph_hourdetail.php freepbx-2.0.1/amp_conf/htdocs/admin/cdr/graph_hourdetail.php
+--- freepbx-2.0.1.orig/amp_conf/htdocs/admin/cdr/graph_hourdetail.php	2005-03-13 21:34:07.000000000 +0100
++++ freepbx-2.0.1/amp_conf/htdocs/admin/cdr/graph_hourdetail.php	2006-05-31 02:28:16.000000000 +0200
+@@ -1,9 +1,9 @@
+ <?php /* $Id$ */
+ include_once(dirname(__FILE__) . "/lib/defines.php");
+ include_once(dirname(__FILE__) . "/lib/Class.Table.php");
+-include_once(dirname(__FILE__) . "/jpgraph_lib/jpgraph.php");
+-include_once(dirname(__FILE__) . "/jpgraph_lib/jpgraph_line.php");
+-include_once(dirname(__FILE__) . "/jpgraph_lib/jpgraph_bar.php");
++include_once(dirname(__FILE__) . "/usr/share/php/jpgraph/jpgraph.php");
++include_once(dirname(__FILE__) . "/usr/share/php/jpgraph/jpgraph_line.php");
++include_once(dirname(__FILE__) . "/usr/share/php/jpgraph/jpgraph_bar.php");
+ 
+ 
+ // this variable specifie the debug type (0 => nothing, 1 => sql result, 2 => boucle checking, 3 other value checking)
+diff -uNr freepbx-2.0.1.orig/amp_conf/htdocs/admin/cdr/graph_pie.php freepbx-2.0.1/amp_conf/htdocs/admin/cdr/graph_pie.php
+--- freepbx-2.0.1.orig/amp_conf/htdocs/admin/cdr/graph_pie.php	2006-02-27 23:02:40.000000000 +0100
++++ freepbx-2.0.1/amp_conf/htdocs/admin/cdr/graph_pie.php	2006-05-31 02:28:16.000000000 +0200
+@@ -1,9 +1,9 @@
+ <?php /* $Id$ */
+ include_once(dirname(__FILE__) . "/lib/defines.php");
+ include_once(dirname(__FILE__) . "/lib/Class.Table.php");
+-include_once(dirname(__FILE__) . "/jpgraph_lib/jpgraph.php");
+-include_once(dirname(__FILE__) . "/jpgraph_lib/jpgraph_pie.php");
+-include_once(dirname(__FILE__) . "/jpgraph_lib/jpgraph_pie3d.php");
++include_once(dirname(__FILE__) . "/usr/share/php/jpgraph/jpgraph.php");
++include_once(dirname(__FILE__) . "/usr/share/php/jpgraph/jpgraph_pie.php");
++include_once(dirname(__FILE__) . "/usr/share/php/jpgraph/jpgraph_pie3d.php");
+ 
+ 
+ /*
+diff -uNr freepbx-2.0.1.orig/amp_conf/htdocs/admin/cdr/graph_statbar.php freepbx-2.0.1/amp_conf/htdocs/admin/cdr/graph_statbar.php
+--- freepbx-2.0.1.orig/amp_conf/htdocs/admin/cdr/graph_statbar.php	2005-03-13 21:34:07.000000000 +0100
++++ freepbx-2.0.1/amp_conf/htdocs/admin/cdr/graph_statbar.php	2006-05-31 02:28:16.000000000 +0200
+@@ -1,8 +1,8 @@
+ <?php /* $Id$ */
+ include_once(dirname(__FILE__) . "/lib/defines.php");
+ include_once(dirname(__FILE__) . "/lib/Class.Table.php");
+-include_once(dirname(__FILE__) . "/jpgraph_lib/jpgraph.php");
+-include_once(dirname(__FILE__) . "/jpgraph_lib/jpgraph_bar.php");
++include_once(dirname(__FILE__) . "/usr/share/php/jpgraph/jpgraph.php");
++include_once(dirname(__FILE__) . "/usr/share/php/jpgraph/jpgraph_bar.php");
+ 
+ // this variable specifie the debug type (0 => nothing, 1 => sql result, 2 => boucle checking, 3 other value checking)
+ $FG_DEBUG = 0;
+diff -uNr freepbx-2.0.1.orig/amp_conf/htdocs/admin/cdr/graph_stat.php freepbx-2.0.1/amp_conf/htdocs/admin/cdr/graph_stat.php
+--- freepbx-2.0.1.orig/amp_conf/htdocs/admin/cdr/graph_stat.php	2005-04-24 20:12:25.000000000 +0200
++++ freepbx-2.0.1/amp_conf/htdocs/admin/cdr/graph_stat.php	2006-05-31 02:28:16.000000000 +0200
+@@ -1,8 +1,8 @@
+ <?php
+ include_once(dirname(__FILE__) . "/lib/defines.php");
+ include_once(dirname(__FILE__) . "/lib/Class.Table.php");
+-include_once(dirname(__FILE__) . "/jpgraph_lib/jpgraph.php");
+-include_once(dirname(__FILE__) . "/jpgraph_lib/jpgraph_line.php");
++include_once(dirname(__FILE__) . "/usr/share/php/jpgraph/jpgraph.php");
++include_once(dirname(__FILE__) . "/usr/share/php/jpgraph/jpgraph_line.php");
+ 
+ // this variable specifie the debug type (0 => nothing, 1 => sql result, 2 => boucle checking, 3 other value checking)
+ $FG_DEBUG = 0;
