@@ -23,6 +23,7 @@ Requires:	asterisk-perl
 Requires:	audiofile
 Requires:	bison
 Requires:	curl
+Requires:	jpgraph
 Requires:	lame
 Requires:	libtiff
 Requires:	libxml2
@@ -35,14 +36,13 @@ Requires:	perl-CPAN
 Requires:	perl-IPC-Signal
 Requires:	perl-Net-Telnet
 Requires:	perl-Proc-WaitStat
-Requires:	php-gd
-Requires:	php-gettext
-Requires:	php-pcre
+Requires:	php(gd)
+Requires:	php(gettext)
+Requires:	php(pcre)
+Requires:	php(posix)
 Requires:	php-pear-DB
-Requires:	php-posix
 Requires:	php-program
 Requires:	sox
-Requires:	jpgraph
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -54,22 +54,21 @@ complete with web-based administrative interface.
 %description -l pl
 Coalescent Systems Inc. uruchomi³o projekt freePBX (poprzednio
 Asterisk Management Portal) aby po³±czyæ najlepsze istniej±ce
-aplikacje w celu stworzenia ustandaryzowanej implementacji
-Asteriska uzupe³nionego o interfejs administracyjny WWW.
+aplikacje w celu stworzenia ustandaryzowanej implementacji Asteriska
+uzupe³nionego o interfejs administracyjny WWW.
 
 %package db-mysql
 Summary:	FreePBX DB Driver for MySQL
 Summary(pl):	Sterownik bazy danych MySQL dla FreePBX
 Group:		Applications/WWW
-Requires:	php-mysql
+Requires:	php(mysql)
 Provides:	%{name}(DB_Driver) = %{version}-%{release}
 
 %description db-mysql
 This virtual package provides MySQL database backend for FreePBX.
 
 %description db-mysql -l pl
-Ten wirtualny pakiet dostarcza backend bazy danych MySQL dla
-FreePBX.
+Ten wirtualny pakiet dostarcza backend bazy danych MySQL dla FreePBX.
 
 %prep
 %setup -q
