@@ -2,7 +2,7 @@
 # - remowe jpgraph, add patch
 # - pl translations
 Summary:	FreePBX - Asterisk Management Portal (AMP)
-Summary(pl):	FreePBX - interfejs WWW do Asteriska
+Summary(pl.UTF-8):   FreePBX - interfejs WWW do Asteriska
 Name:		freepbx
 Version:	2.0.1
 Release:	0.1
@@ -51,15 +51,15 @@ Management Portal) project to bring together best-of-breed
 applications to produce a standardized implementation of Asterisk
 complete with web-based administrative interface.
 
-%description -l pl
-Coalescent Systems Inc. uruchomi³o projekt freePBX (poprzednio
-Asterisk Management Portal) aby po³±czyæ najlepsze istniej±ce
+%description -l pl.UTF-8
+Coalescent Systems Inc. uruchomiÅ‚o projekt freePBX (poprzednio
+Asterisk Management Portal) aby poÅ‚Ä…czyÄ‡ najlepsze istniejÄ…ce
 aplikacje w celu stworzenia ustandaryzowanej implementacji Asteriska
-uzupe³nionego o interfejs administracyjny WWW.
+uzupeÅ‚nionego o interfejs administracyjny WWW.
 
 %package db-mysql
 Summary:	FreePBX DB Driver for MySQL
-Summary(pl):	Sterownik bazy danych MySQL dla FreePBX
+Summary(pl.UTF-8):   Sterownik bazy danych MySQL dla FreePBX
 Group:		Applications/WWW
 Requires:	php(mysql)
 Provides:	%{name}(DB_Driver) = %{version}-%{release}
@@ -67,7 +67,7 @@ Provides:	%{name}(DB_Driver) = %{version}-%{release}
 %description db-mysql
 This virtual package provides MySQL database backend for FreePBX.
 
-%description db-mysql -l pl
+%description db-mysql -l pl.UTF-8
 Ten wirtualny pakiet dostarcza backend bazy danych MySQL dla FreePBX.
 
 %prep
