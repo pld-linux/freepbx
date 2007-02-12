@@ -2,7 +2,7 @@
 # - remowe jpgraph, add patch
 # - pl translations
 Summary:	FreePBX - Asterisk Management Portal (AMP)
-Summary(pl.UTF-8):   FreePBX - interfejs WWW do Asteriska
+Summary(pl.UTF-8):	FreePBX - interfejs WWW do Asteriska
 Name:		freepbx
 Version:	2.0.1
 Release:	0.1
@@ -59,7 +59,7 @@ uzupełnionego o interfejs administracyjny WWW.
 
 %package db-mysql
 Summary:	FreePBX DB Driver for MySQL
-Summary(pl.UTF-8):   Sterownik bazy danych MySQL dla FreePBX
+Summary(pl.UTF-8):	Sterownik bazy danych MySQL dla FreePBX
 Group:		Applications/WWW
 Requires:	php(mysql)
 Provides:	%{name}(DB_Driver) = %{version}-%{release}
