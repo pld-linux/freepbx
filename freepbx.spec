@@ -4,12 +4,12 @@
 Summary:	FreePBX - Asterisk Management Portal (AMP)
 Summary(pl.UTF-8):	FreePBX - interfejs WWW do Asteriska
 Name:		freepbx
-Version:	2.0.1
+Version:	2.3.0
 Release:	0.1
 License:	GPL
 Group:		Applications
 Source0:	http://dl.sourceforge.net/amportal/%{name}-%{version}.tar.gz
-# Source0-md5:	aa100b6928a3e1a61603fb969485381a
+# Source0-md5:	c64b0f6be4a9d2369c17c7b9227c0f00
 #Source1:	%{name}.conf
 #Source2:	%{name}-config.php
 Patch0:		%{name}-jpgraph.patch
@@ -84,7 +84,7 @@ install -d $RPM_BUILD_ROOT%{_bindir}
 
 cd amp_conf
 cp -R htdocs/* $RPM_BUILD_ROOT%{_datadir}/%{name}/htdocs
-install cgi-bin/* $RPM_BUILD_ROOT%{_datadir}/%{name}/cgi-bin
+#install cgi-bin/* $RPM_BUILD_ROOT%{_datadir}/%{name}/cgi-bin
 install agi-bin/* $RPM_BUILD_ROOT%{_datadir}/%{name}/agi-bin
 install bin/*	$RPM_BUILD_ROOT%{_datadir}/%{name}/bin
 install mohmp3/* $RPM_BUILD_ROOT%{_datadir}/%{name}/mohmp3
