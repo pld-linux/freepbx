@@ -72,7 +72,7 @@ Ten wirtualny pakiet dostarcza backend bazy danych MySQL dla FreePBX.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 find '(' -name '*.php' -o -name '*.inc' ')' -print0 | xargs -0 sed -i -e 's,\r$,,'
 rm -dfr htdocs/admin/cdr/jpgraph_lib
 
